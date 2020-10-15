@@ -134,6 +134,49 @@ describe Mumbling do
                 # Assert
                 expect(actual_output).to eq(expected_output)
             end
+            it "given user enters 'gf', it returns 'G-Ff" do
+                # Arrange 
+                mumbling = Mumbling.new
+                # Act
+                actual_output = mumbling.mumble_letters("gf")
+                expected_output = "G-Ff"
+    
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+        end
+        context "given user enters a string of length three containing uppercase alphabets, it returns the correct string " do
+            it "given user enters 'ABB, it returns 'A-Bb-Bbb'" do
+                    # Arrange 
+                mumbling = Mumbling.new
+                # Act
+                actual_output = mumbling.mumble_letters("ABB")
+                expected_output = "A-Bb-Bbb"
+    
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+            it "given user enters 'ABC', it returns 'A-Bb-Ccc'" do
+                # Arrange 
+                mumbling = Mumbling.new
+                # Act
+                actual_output = mumbling.mumble_letters("ABC")
+                expected_output = "A-Bb-Ccc"
+
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+            it "given user enters 'XTR', it returns 'X-Tt-Rrr'" do
+                # Arrange 
+                mumbling = Mumbling.new
+                # Act
+                actual_output = mumbling.mumble_letters("XTR")
+                expected_output = "X-Tt-Rrr"
+
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+     
         end
     end
 end

@@ -1,9 +1,9 @@
 class Mumbling
     def mumble_letters(str)
-        return "B-Cc" if str == "bc"
-        return "S-Tt" if str == 'st'
         return str if str.length == 0
         return str[0].upcase if str.length == 1
-        return str[0].upcase << "-" << str[1] << str[1].downcase
+        return str[0].upcase << "-" << str[1].upcase << str[1].downcase if str.length == 2
+        return str[0].upcase << "-" << str[1].upcase << str[1].downcase << "-" << str[2] << str[2].downcase << str[2].downcase if str.length == 3
+        
     end
-end
+end 
