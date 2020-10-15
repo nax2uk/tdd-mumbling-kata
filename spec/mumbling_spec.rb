@@ -128,6 +128,24 @@ describe Mumbling do
                 expect(actual_output).to eq(expected_output)
             end
         end
+        context "given user enters a string of length two containing an uppercase and lowercase alphabets, it returns the correct string " do
+            it "given user enters 'bC', returns 'B-Cc'" do
+                # Arrange && Act
+                actual_output = mumbling.mumble_letters("bC")
+                expected_output = "B-Cc"
+    
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+            it "given user enters 'Bc', returns 'B-Cc'" do
+                # Arrange && Act
+                actual_output = mumbling.mumble_letters("Bc")
+                expected_output = "B-Cc"
+    
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+        end
         context "given user enters a string of length three containing uppercase alphabets, it returns the correct string " do
             it "given user enters 'ABB, it returns 'A-Bb-Bbb'" do
                 # Arrange && Act
@@ -175,6 +193,32 @@ describe Mumbling do
             it "given user enters 'ret', it returns it returns 'R-Ee-Ttt'" do
                 # Arrange && Act
                 actual_output = mumbling.mumble_letters("ret")
+                expected_output = "R-Ee-Ttt"
+
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+        end
+        context "given user enters a string of length three containing a mixture of uppercase and lowercase alphabets, it returns the correct string " do
+            it "given user enters 'Abc, it returns it returns 'A-Bb-Ccc'" do
+                # Arrange && Act
+                actual_output = mumbling.mumble_letters("Abc")
+                expected_output = "A-Bb-Ccc"
+
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+            it "given user enters 'fRg, it returns it returns 'F-Rr-Ggg'" do
+                # Arrange && Act
+                actual_output = mumbling.mumble_letters("fRg")
+                expected_output = "F-Rr-Ggg"
+
+                # Assert
+                expect(actual_output).to eq(expected_output)
+            end
+            it "given user enters 'reT', it returns it returns 'R-Ee-Ttt'" do
+                # Arrange && Act
+                actual_output = mumbling.mumble_letters("reT")
                 expected_output = "R-Ee-Ttt"
 
                 # Assert
